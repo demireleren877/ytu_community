@@ -18,12 +18,13 @@ class FacilityDropdown extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border.all(width: .4),
-          borderRadius: BorderRadius.circular(15.r)),
+        border: Border.all(width: 0, color: Colors.white),
+        borderRadius: BorderRadius.circular(10.r),
+      ),
       padding: context.paddingLow,
       child: Observer(
         builder: (a) => DropdownButton(
-          borderRadius: BorderRadius.circular(15.r),
+          borderRadius: BorderRadius.circular(10.r),
           value: _signupVM.choosenValue,
           underline: const SizedBox(),
           isExpanded: true,

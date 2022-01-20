@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kartal/kartal.dart';
+import 'package:math_eng_community/feature/signup/constants.dart';
 import 'package:math_eng_community/feature/signup/viewmodel/signup_viewmodel.dart';
-
 import 'components/email_field.dart';
 import 'components/facility_dropdown.dart';
 import 'components/name_field.dart';
@@ -23,30 +23,31 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Form(
         key: _formKey,
         child: Container(
+          height: context.height,
           padding: context.paddingMedium,
           child: ListView(
             physics: const BouncingScrollPhysics(),
             children: [
               AnimatedContainer(
                 duration: context.durationLow,
-                height: context.isKeyBoardOpen ? 0 : 200.h,
+                height: context.isKeyBoardOpen ? 0 : 240.h,
                 child: const ProfileImage(),
               ),
+              SizedBox(height: 25.h),
               NameField(nameController: _nameController),
-              const SizedBox(height: 15),
+              SizedBox(height: 25.h),
               FacilityDropdown(signupVM: _signupVM),
-              const SizedBox(height: 15),
+              SizedBox(height: 25.h),
               SchoolNumberField(
                   schoolNumberController: _schoolNumberController),
-              const SizedBox(height: 15),
+              SizedBox(height: 25.h),
               EmailField(emailController: _emailController),
-              const SizedBox(height: 15),
+              SizedBox(height: 25.h),
               PasswordField(passwordController: _passwordController),
-              const SizedBox(height: 15),
+              SizedBox(height: 25.h),
               SignupButton(
                 formKey: _formKey,
                 signupVM: _signupVM,
@@ -54,6 +55,15 @@ class SignupScreen extends StatelessWidget {
                 passwordController: _passwordController,
                 nameController: _nameController,
                 schoolNumberController: _schoolNumberController,
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: TextButton(
+                  child: const Text(SignupConstants.haveAccount),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
               )
             ],
           ),

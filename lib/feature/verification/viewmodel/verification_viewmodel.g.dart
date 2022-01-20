@@ -24,6 +24,16 @@ mixin _$VerificationVM on _VerificationVMBase, Store {
     });
   }
 
+  final _$checkEmailVerificationAsyncAction =
+      AsyncAction('_VerificationVMBase.checkEmailVerification');
+
+  @override
+  Future<void> checkEmailVerification(
+      dynamic context, dynamic user, dynamic timer) {
+    return _$checkEmailVerificationAsyncAction
+        .run(() => super.checkEmailVerification(context, user, timer));
+  }
+
   final _$_VerificationVMBaseActionController =
       ActionController(name: '_VerificationVMBase');
 

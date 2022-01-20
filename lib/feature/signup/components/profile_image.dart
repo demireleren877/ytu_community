@@ -12,7 +12,9 @@ class ProfileImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipOval(
       child: Image.asset(
-        SignupConstants.profileImagePath,
+        ThemeMode.system == ThemeMode.light
+            ? SignupConstants.profileImagePath
+            : SignupConstants.profileImagePathDark,
         width: 50.w,
         height: 50.h,
         fit: BoxFit.contain,

@@ -9,9 +9,12 @@ class Logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
+      foregroundColor: Colors.white,
       backgroundColor: AppColors.transparent,
       radius: 120.r,
-      backgroundImage: const AssetImage(LoginConstants.logoPath),
+      child: Image.asset(ThemeMode.system == ThemeMode.light
+          ? LoginConstants.logoPath
+          : LoginConstants.darkLogoPath),
     );
   }
 }

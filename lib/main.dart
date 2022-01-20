@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(412, 798),
       builder: () => MaterialApp(
-        theme: ThemeData(
+        theme: ThemeData.light().copyWith(
           appBarTheme: AppBarTheme(
             iconTheme: const IconThemeData(color: Colors.black),
             actionsIconTheme: const IconThemeData(color: Colors.black),
@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         themeMode: ThemeMode.system,
+        darkTheme: ThemeData.dark(),
         debugShowCheckedModeBanner: false,
         title: 'Material App',
         initialRoute: "/",

@@ -23,7 +23,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
     user = FirebaseServices.auth.currentUser!;
     user.sendEmailVerification();
     timer = Timer.periodic(const Duration(seconds: 5), (timer) {
-      checkEmailVerification();
+      _verificationVM.checkEmailVerification(context, user, timer);
     });
     super.initState();
   }
@@ -46,17 +46,5 @@ class _VerificationScreenState extends State<VerificationScreen> {
         );
       }),
     );
-  }
-
-  Future<void> checkEmailVerification() async {
-    user = FirebaseServices.auth.currentUser!;
-    await user.reload();
-    if (user.emailVerified) {
-      _verificationVM.changePath();
-      timer.cancel();
-      Future.delayed(const Duration(seconds: 3), () {
-        Navigator.pushNamed(context, "/homeScreen");
-      });
-    }
   }
 }
