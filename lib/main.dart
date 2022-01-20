@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:math_eng_community/core/services/firebase_services.dart';
 import 'package:math_eng_community/feature/verification/verification_screen.dart';
 import '/feature/home/home_screen.dart';
 import 'core/app_constants/color_constants.dart';
@@ -38,7 +39,8 @@ class MyApp extends StatelessWidget {
         darkTheme: ThemeData.dark(),
         debugShowCheckedModeBanner: false,
         title: 'Material App',
-        initialRoute: "/",
+        initialRoute:
+            FirebaseServices.auth.currentUser == null ? "/" : "/homeScreen",
         routes: {
           "/": (context) => LoginScreen(),
           "/homeScreen": (context) => const HomeScreen(),
