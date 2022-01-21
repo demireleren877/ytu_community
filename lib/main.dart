@@ -25,16 +25,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(412, 798),
       builder: () => MaterialApp(
-        theme: ThemeData.light().copyWith(
-          appBarTheme: AppBarTheme(
-            iconTheme: const IconThemeData(color: Colors.black),
-            actionsIconTheme: const IconThemeData(color: Colors.black),
-            toolbarHeight: 30.h,
-            backgroundColor: AppColors.transparent,
-            elevation: 0,
-            systemOverlayStyle: SystemUiOverlayStyle.dark,
-          ),
-        ),
+        theme: ThemeData.light(),
         themeMode: ThemeMode.system,
         darkTheme: ThemeData.dark(),
         debugShowCheckedModeBanner: false,

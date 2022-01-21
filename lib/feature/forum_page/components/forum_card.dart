@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kartal/kartal.dart';
 import 'package:math_eng_community/core/app_constants/path_constants.dart';
+import 'package:math_eng_community/core/init/theme_service.dart';
 import 'package:math_eng_community/feature/chat_room/chat_screen.dart';
 
 class ForumCard extends StatelessWidget {
@@ -22,9 +23,9 @@ class ForumCard extends StatelessWidget {
         child: ListTile(
           contentPadding: context.paddingLow,
           horizontalTitleGap: 30.w,
-          leading: Image.asset(ThemeMode.system == ThemeMode.dark
-              ? PathConstants.logoPath
-              : PathConstants.darkLogoPath),
+          leading: Image.asset(ThemeService().isDark()
+              ? PathConstants.darkLogoPath
+              : PathConstants.logoPath),
           title: Text(
             "${snapshot.data.data()["takenLectures"][index]}",
             style: TextStyle(fontSize: 20.h),

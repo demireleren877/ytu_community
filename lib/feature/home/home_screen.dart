@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:math_eng_community/core/init/theme_service.dart';
 import 'package:math_eng_community/feature/forum_page/forum_screen.dart';
 import 'package:math_eng_community/feature/home/viewmodel/home_viewmodel.dart';
 
@@ -32,22 +33,23 @@ class HomeScreen extends StatelessWidget {
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: "Home",
+              label: "",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.forum_outlined),
-              label: "Home",
+              label: "",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.my_library_books_sharp),
-              label: "Home",
+              label: "",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: "Home",
+              label: "",
             ),
           ],
-          selectedItemColor: Colors.white,
+          selectedItemColor:
+              ThemeService().isDark() ? Colors.white : Colors.lightBlue,
           unselectedItemColor: Colors.grey,
           currentIndex: _homeVM.selectedIndex,
         ),
