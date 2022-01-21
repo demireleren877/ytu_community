@@ -1,9 +1,6 @@
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kartal/kartal.dart';
 import 'package:flutter/material.dart';
 import 'package:math_eng_community/core/services/firebase_services.dart';
-import 'package:math_eng_community/feature/login/constants.dart';
-
+import 'package:math_eng_community/core/utilities/centered_progress.dart';
 import 'components/forum_list.dart';
 
 class ForumScreen extends StatelessWidget {
@@ -33,16 +30,5 @@ class ForumScreen extends StatelessWidget {
         },
       ),
     );
-  }
-}
-
-class CenteredProgressIndicator extends StatelessWidget {
-  const CenteredProgressIndicator({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: CircularProgressIndicator());
   }
 }

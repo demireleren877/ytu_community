@@ -1,6 +1,4 @@
 class SignupConstants {
-  static const String profileImagePath = "asset/images/person.png";
-  static const String profileImagePathDark = "asset/images/person_dark.png";
   static const String emailValidationText = "@std.yildiz.edu.tr";
   static const String emailValidationError = "Geçersiz Mail Adresi";
   static const String haveAccount = "Hesabın var mı?";

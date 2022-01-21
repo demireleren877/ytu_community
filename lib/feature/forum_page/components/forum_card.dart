@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kartal/kartal.dart';
-import 'package:math_eng_community/feature/login/constants.dart';
+import 'package:math_eng_community/core/app_constants/path_constants.dart';
+import 'package:math_eng_community/feature/chat_room/chat_screen.dart';
 
 class ForumCard extends StatelessWidget {
   const ForumCard({
@@ -22,14 +23,24 @@ class ForumCard extends StatelessWidget {
           contentPadding: context.paddingLow,
           horizontalTitleGap: 30.w,
           leading: Image.asset(ThemeMode.system == ThemeMode.dark
-              ? LoginConstants.logoPath
-              : LoginConstants.darkLogoPath),
+              ? PathConstants.logoPath
+              : PathConstants.darkLogoPath),
           title: Text(
             "${snapshot.data.data()["takenLectures"][index]}",
             style: TextStyle(fontSize: 20.h),
           ),
           subtitle: Text("${snapshot.data.data()["name"]}"),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ChatScreen(
+                  currentUser: snapshot.data.data()["name"],
+                  currentLecture: snapshot.data.data()["takenLectures"][index],
+                ),
+              ),
+            );
+          },
         ),
       ),
     );

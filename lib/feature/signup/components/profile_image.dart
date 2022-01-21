@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../constants.dart';
+import 'package:math_eng_community/core/app_constants/path_constants.dart';
 
 class ProfileImage extends StatelessWidget {
   const ProfileImage({
@@ -13,8 +12,8 @@ class ProfileImage extends StatelessWidget {
     return ClipOval(
       child: Image.asset(
         ThemeMode.system == ThemeMode.light
-            ? SignupConstants.profileImagePath
-            : SignupConstants.profileImagePathDark,
+            ? PathConstants.profileImagePath
+            : PathConstants.profileImagePathDark,
         width: 50.w,
         height: 50.h,
         fit: BoxFit.contain,

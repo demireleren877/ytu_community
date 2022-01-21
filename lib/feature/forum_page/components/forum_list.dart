@@ -13,6 +13,7 @@ class ForumList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: const BouncingScrollPhysics(),
       itemCount: snapshot.data.data()["takenLectures"].length,
       itemBuilder: (BuildContext context, int index) {
         return ForumCard(index: index, snapshot: snapshot);
