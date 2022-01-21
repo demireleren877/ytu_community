@@ -147,7 +147,12 @@ class InputField extends StatelessWidget {
                       child:
                           MessageField(messageController: _messageController),
                     ),
-                    SendPhotoButton(context: context),
+                    SendPhotoButton(
+                      context: context,
+                      chatVM: _chatVM,
+                      currentLecture: widget.currentLecture,
+                      currentUser: widget.currentUser,
+                    ),
                     SizedBox(width: 5.w),
                     SendMessageButton(
                       context: context,
