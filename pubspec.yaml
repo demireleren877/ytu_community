@@ -16,6 +16,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_mobx: ^2.0.3+2
+  syncfusion_flutter_pdfviewer: ^19.4.43-beta
   flutter_screenutil: ^5.1.0
   fluttertoast: ^8.0.8
   image_picker: ^0.8.4+4

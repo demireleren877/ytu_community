@@ -49,29 +49,29 @@ class MessageCard extends StatelessWidget {
               ),
             ),
           )
-        : InkWell(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => ShowImage(
-                    imageUrl: snapshot.data.docs[index].data()["message"]),
-              ),
-            ),
+        : Container(
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+            height: context.height / 2.5,
+            width: context.width,
+            alignment: isMe == true ? Alignment.topRight : Alignment.topLeft,
             child: Container(
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(15)),
+              margin: context.paddingLow,
+              alignment: Alignment.center,
               height: context.height / 2.5,
-              width: context.width,
-              alignment: isMe == true ? Alignment.topRight : Alignment.topLeft,
-              child: Container(
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(15)),
-                margin: context.paddingLow,
-                alignment: Alignment.center,
-                height: context.height / 2.5,
-                width: context.width / 2,
-                child: snapshot.data.docs[index].data()["message"] != ""
-                    ? ClipRRect(
+              width: context.width / 2,
+              child: snapshot.data.docs[index].data()["message"] != ""
+                  ? InkWell(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => ShowImage(
+                              imageUrl:
+                                  snapshot.data.docs[index].data()["message"]),
+                        ),
+                      ),
+                      child: ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: CachedNetworkImage(
                           imageUrl: snapshot.data.docs[index].data()["message"],
@@ -86,9 +86,9 @@ class MessageCard extends StatelessWidget {
                           errorWidget: (context, url, error) =>
                               const Icon(Icons.error),
                         ),
-                      )
-                    : const CircularProgressIndicator(),
-              ),
+                      ),
+                    )
+                  : const CircularProgressIndicator(),
             ),
           );
   }

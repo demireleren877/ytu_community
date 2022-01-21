@@ -9,6 +9,37 @@ part of 'chat_viewmodel.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$ChatVM on _ChatVMBase, Store {
+  final _$imageFileAtom = Atom(name: '_ChatVMBase.imageFile');
+
+  @override
+  File get imageFile {
+    _$imageFileAtom.reportRead();
+    return super.imageFile;
+  }
+
+  @override
+  set imageFile(File value) {
+    _$imageFileAtom.reportWrite(value, super.imageFile, () {
+      super.imageFile = value;
+    });
+  }
+
+  final _$sendImageAsyncAction = AsyncAction('_ChatVMBase.sendImage');
+
+  @override
+  Future sendImage(dynamic currentLecture, dynamic currentUser) {
+    return _$sendImageAsyncAction
+        .run(() => super.sendImage(currentLecture, currentUser));
+  }
+
+  final _$uploadImageAsyncAction = AsyncAction('_ChatVMBase.uploadImage');
+
+  @override
+  Future<dynamic> uploadImage(dynamic currentLecture, dynamic currentUser) {
+    return _$uploadImageAsyncAction
+        .run(() => super.uploadImage(currentLecture, currentUser));
+  }
+
   final _$_ChatVMBaseActionController = ActionController(name: '_ChatVMBase');
 
   @override
@@ -38,7 +69,7 @@ mixin _$ChatVM on _ChatVMBase, Store {
   @override
   String toString() {
     return '''
-
+imageFile: ${imageFile}
     ''';
   }
 }

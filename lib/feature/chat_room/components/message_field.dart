@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:math_eng_community/feature/chat_room/constants.dart';
 
 class MessageField extends StatelessWidget {
   const MessageField({
@@ -15,7 +16,7 @@ class MessageField extends StatelessWidget {
       controller: _messageController,
       maxLines: null,
       decoration: const InputDecoration(
-        hintText: "Type message",
+        hintText: ChatConstants.messagePlaceHolder,
         border: InputBorder.none,
       ),
     );

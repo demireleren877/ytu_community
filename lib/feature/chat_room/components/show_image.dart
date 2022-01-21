@@ -9,11 +9,13 @@ class ShowImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        height: context.height,
-        width: context.width,
-        child: CachedNetworkImage(
-          imageUrl: imageUrl ?? "",
+      body: InteractiveViewer(
+        child: SizedBox(
+          height: context.height,
+          width: context.width,
+          child: CachedNetworkImage(
+            imageUrl: imageUrl ?? "",
+          ),
         ),
       ),
     );
