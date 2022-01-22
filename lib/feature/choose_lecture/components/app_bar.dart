@@ -6,7 +6,7 @@ import 'package:math_eng_community/feature/choose_lecture/constants.dart';
 import 'package:math_eng_community/feature/choose_lecture/viewmodel/choose_lecture_viewmodel.dart';
 
 AppBar appBar(ChooseLectureVM chooseLectureVM, name, facility, schoolNumber,
-    email, password, context) {
+    email, password, context, profileImageUrl) {
   return AppBar(
     iconTheme: const IconThemeData(color: Colors.white),
     toolbarHeight: 50.h,
@@ -18,8 +18,8 @@ AppBar appBar(ChooseLectureVM chooseLectureVM, name, facility, schoolNumber,
             Fluttertoast.showToast(msg: "Mail Adresi Sistemde Kayıtlı");
           } else {
             chooseLectureVM.totalCredit <= 28
-                ? chooseLectureVM.createAccount(
-                    name, facility, schoolNumber, email, password, context)
+                ? chooseLectureVM.createAccount(name, facility, schoolNumber,
+                    email, password, context, profileImageUrl)
                 : Fluttertoast.showToast(
                     msg: ChooseLectureConstants.crditErrorMessage,
                   );

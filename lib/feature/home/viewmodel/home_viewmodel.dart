@@ -7,6 +7,13 @@ class HomeVM = _HomeVMBase with _$HomeVM;
 abstract class _HomeVMBase with Store {
   final PageController pageController = PageController();
 
+  List<String> appTitles = [
+    "AnaSayfa",
+    "Forum Sayfasına Hoşgeldiniz",
+    "Ders İçerik Listesi",
+    "Profilim"
+  ];
+
   @observable
   int selectedIndex = 0;
 

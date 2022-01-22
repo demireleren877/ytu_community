@@ -37,7 +37,7 @@ abstract class _ChooseLectureVMBase with Store {
 
   @action
   Future createAccount(
-      name, facility, schoolNumber, email, password, context) async {
+      name, facility, schoolNumber, email, password, context, imageUrl) async {
     try {
       await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password)
@@ -52,6 +52,7 @@ abstract class _ChooseLectureVMBase with Store {
     }
     await FirebaseServices.user.doc(email).set({
       "name": name,
+      "profileImageUrl": imageUrl,
       "facility": facility,
       "schoolNumber": schoolNumber,
       "email": email,

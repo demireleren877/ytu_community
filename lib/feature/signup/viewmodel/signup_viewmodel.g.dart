@@ -24,6 +24,51 @@ mixin _$SignupVM on _SignupVMBase, Store {
     });
   }
 
+  final _$imageUrlAtom = Atom(name: '_SignupVMBase.imageUrl');
+
+  @override
+  String? get imageUrl {
+    _$imageUrlAtom.reportRead();
+    return super.imageUrl;
+  }
+
+  @override
+  set imageUrl(String? value) {
+    _$imageUrlAtom.reportWrite(value, super.imageUrl, () {
+      super.imageUrl = value;
+    });
+  }
+
+  final _$imageFileAtom = Atom(name: '_SignupVMBase.imageFile');
+
+  @override
+  File? get imageFile {
+    _$imageFileAtom.reportRead();
+    return super.imageFile;
+  }
+
+  @override
+  set imageFile(File? value) {
+    _$imageFileAtom.reportWrite(value, super.imageFile, () {
+      super.imageFile = value;
+    });
+  }
+
+  final _$setProfileImageAsyncAction =
+      AsyncAction('_SignupVMBase.setProfileImage');
+
+  @override
+  Future setProfileImage() {
+    return _$setProfileImageAsyncAction.run(() => super.setProfileImage());
+  }
+
+  final _$uploadImageAsyncAction = AsyncAction('_SignupVMBase.uploadImage');
+
+  @override
+  Future uploadImage() {
+    return _$uploadImageAsyncAction.run(() => super.uploadImage());
+  }
+
   final _$_SignupVMBaseActionController =
       ActionController(name: '_SignupVMBase');
 
@@ -60,7 +105,9 @@ mixin _$SignupVM on _SignupVMBase, Store {
   @override
   String toString() {
     return '''
-choosenValue: ${choosenValue}
+choosenValue: ${choosenValue},
+imageUrl: ${imageUrl},
+imageFile: ${imageFile}
     ''';
   }
 }

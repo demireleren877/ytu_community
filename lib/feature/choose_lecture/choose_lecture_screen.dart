@@ -7,19 +7,23 @@ import 'components/app_bar.dart';
 import 'components/lecture_credit_widget.dart';
 
 class ChooseLectureScreen extends StatefulWidget {
-  const ChooseLectureScreen(
-      {Key? key,
-      this.userName,
-      this.userFacility,
-      this.userMail,
-      this.userPassword,
-      this.userSchoolNumber})
-      : super(key: key);
+  const ChooseLectureScreen({
+    Key? key,
+    this.userName,
+    this.userFacility,
+    this.userMail,
+    this.userPassword,
+    this.userSchoolNumber,
+    this.profileImage,
+    this.imageFile,
+  }) : super(key: key);
   final String? userName,
       userFacility,
       userMail,
       userPassword,
-      userSchoolNumber;
+      userSchoolNumber,
+      profileImage,
+      imageFile;
 
   @override
   State<ChooseLectureScreen> createState() => _ChooseLectureScreenState();
@@ -45,7 +49,8 @@ class _ChooseLectureScreenState extends State<ChooseLectureScreen> {
           widget.userSchoolNumber,
           widget.userMail,
           widget.userPassword,
-          context),
+          context,
+          widget.profileImage),
       body: Container(
         padding: context.paddingLow,
         child: Column(

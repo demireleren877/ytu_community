@@ -9,11 +9,6 @@ class ForumScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: const Text("Forum Sayfasına Hoşgeldiniz"),
-        centerTitle: true,
-      ),
       body: StreamBuilder(
         stream: FirebaseServices.user
             .doc(FirebaseServices.auth.currentUser!.email)

@@ -34,7 +34,7 @@ class SignupScreen extends StatelessWidget {
               AnimatedContainer(
                 duration: context.durationLow,
                 height: context.isKeyBoardOpen ? 0 : 240.h,
-                child: const ProfileImage(),
+                child: ProfileImage(signupVM: _signupVM),
               ),
               SizedBox(height: 25.h),
               NameField(nameController: _nameController),

@@ -74,10 +74,16 @@ mixin _$ChooseLectureVM on _ChooseLectureVMBase, Store {
       AsyncAction('_ChooseLectureVMBase.createAccount');
 
   @override
-  Future<dynamic> createAccount(dynamic name, dynamic facility,
-      dynamic schoolNumber, dynamic email, dynamic password, dynamic context) {
-    return _$createAccountAsyncAction.run(() => super
-        .createAccount(name, facility, schoolNumber, email, password, context));
+  Future<dynamic> createAccount(
+      dynamic name,
+      dynamic facility,
+      dynamic schoolNumber,
+      dynamic email,
+      dynamic password,
+      dynamic context,
+      dynamic imageUrl) {
+    return _$createAccountAsyncAction.run(() => super.createAccount(
+        name, facility, schoolNumber, email, password, context, imageUrl));
   }
 
   final _$_ChooseLectureVMBaseActionController =

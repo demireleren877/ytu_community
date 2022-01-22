@@ -23,11 +23,6 @@ class _LectureContentScreenState extends State<LectureContentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        title: const Text("Ders Listesi"),
-      ),
       body: Padding(
         padding: context.paddingLow,
         child: Column(
