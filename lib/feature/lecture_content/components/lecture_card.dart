@@ -29,11 +29,11 @@ class LectureCard extends StatelessWidget {
           _searchList[index].name,
         ),
         child: Card(
-          color: Colors.purple[800],
+          color: Colors.orange,
           child: Center(
             child: Text(
               _searchList[index].name,
-              style: context.textTheme.headline6,
+              style: context.textTheme.headline6?.copyWith(color: Colors.white),
             ),
           ),
         ),

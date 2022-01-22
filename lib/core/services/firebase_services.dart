@@ -13,4 +13,9 @@ class FirebaseServices {
         .orderBy("time", descending: true)
         .snapshots();
   }
+
+  Future<bool> uniqUserCheck(String mail) async {
+    final result = await user.where('email', isEqualTo: mail).get();
+    return result.docs.isEmpty;
+  }
 }

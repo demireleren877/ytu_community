@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(412, 798),
       builder: () => MaterialApp(
         theme: ThemeData.light(),
-        themeMode: ThemeMode.system,
+        themeMode: ThemeMode.system, //ThemeMode.system,
         darkTheme: ThemeData.dark(),
         debugShowCheckedModeBanner: false,
         title: 'Material App',

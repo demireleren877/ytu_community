@@ -5,6 +5,8 @@ import 'package:math_eng_community/core/data/class_list.dart';
 import 'package:math_eng_community/core/utilities/input_decoration.dart';
 import 'package:math_eng_community/feature/lecture_content/viewmodel/lecture_content_viewmodel.dart';
 
+import 'components/lecture_list_view.dart';
+
 class LectureContentScreen extends StatefulWidget {
   const LectureContentScreen({Key? key}) : super(key: key);
 
@@ -30,7 +32,7 @@ class _LectureContentScreenState extends State<LectureContentScreen> {
         padding: context.paddingLow,
         child: Column(
           children: [
-            SizedBox(height: 25.h),
+            SizedBox(height: 10.h),
             Center(
               child: SizedBox(
                 width: context.dynamicWidth(0.95),
@@ -62,76 +64,11 @@ class _LectureContentScreenState extends State<LectureContentScreen> {
             ),
             Expanded(
               child: LectureListView(
-                  searchList: _searchList, lectureContentVM: _lectureContentVM),
+                searchList: _searchList,
+                lectureContentVM: _lectureContentVM,
+              ),
             )
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class LectureListView extends StatelessWidget {
-  const LectureListView({
-    Key? key,
-    required List<ClassesModel> searchList,
-    required LectureContentVM lectureContentVM,
-  })  : _searchList = searchList,
-        _lectureContentVM = lectureContentVM,
-        super(key: key);
-
-  final List<ClassesModel> _searchList;
-  final LectureContentVM _lectureContentVM;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: _searchList.length,
-      physics: const BouncingScrollPhysics(),
-      padding: context.paddingLow,
-      itemBuilder: (BuildContext context, int index) {
-        return LectureCard(
-          lectureContentVM: _lectureContentVM,
-          searchList: _searchList,
-          index: index,
-        );
-      },
-    );
-  }
-}
-
-class LectureCard extends StatelessWidget {
-  const LectureCard({
-    Key? key,
-    required LectureContentVM lectureContentVM,
-    required List<ClassesModel> searchList,
-    required this.index,
-  })  : _lectureContentVM = lectureContentVM,
-        _searchList = searchList,
-        super(key: key);
-
-  final LectureContentVM _lectureContentVM;
-  final List<ClassesModel> _searchList;
-  final int index;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60.h,
-      child: InkWell(
-        onTap: () => _lectureContentVM.openPDF(
-          context,
-          _searchList[index].pdfid,
-          _searchList[index].name,
-        ),
-        child: Card(
-          color: Colors.purple[800],
-          child: Center(
-            child: Text(
-              _searchList[index].name,
-              style: context.textTheme.headline6,
-            ),
-          ),
         ),
       ),
     );
