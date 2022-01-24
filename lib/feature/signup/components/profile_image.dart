@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/core/app_constants/path_constants.dart';
-import 'package:math_eng_community/core/init/theme_service.dart';
 import 'package:math_eng_community/feature/signup/viewmodel/signup_viewmodel.dart';
 
 class ProfileImage extends StatelessWidget {

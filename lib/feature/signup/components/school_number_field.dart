@@ -18,9 +18,7 @@ class SchoolNumberField extends StatelessWidget {
       controller: _schoolNumberController,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (value) {
-        if (value == null) {
-          return SignupConstants.emptyFieldError;
-        }
+        return value == "" ? SignupConstants.emptyFieldError : null;
       },
       decoration: ProjectInputs()
           .copyWith(labelText: SignupConstants.labelSchoolNumber),

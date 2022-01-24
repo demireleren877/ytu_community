@@ -18,9 +18,7 @@ class NameField extends StatelessWidget {
       controller: _nameController,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (value) {
-        if (value == null) {
-          return SignupConstants.emptyFieldError;
-        }
+        return value == "" ? SignupConstants.emptyFieldError : null;
       },
       decoration:
           ProjectInputs().copyWith(labelText: SignupConstants.labelName),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive/hive.dart';
 import 'package:kartal/kartal.dart';
 import 'package:math_eng_community/feature/signup/constants.dart';
+import 'package:math_eng_community/feature/signup/model/user_model.dart';
 import 'package:math_eng_community/feature/signup/viewmodel/signup_viewmodel.dart';
 import 'components/email_field.dart';
 import 'components/facility_dropdown.dart';
@@ -11,14 +13,28 @@ import 'components/profile_image.dart';
 import 'components/school_number_field.dart';
 import 'components/signup_button.dart';
 
-class SignupScreen extends StatelessWidget {
-  SignupScreen({Key? key}) : super(key: key);
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final SignupVM _signupVM = SignupVM();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _schoolNumberController = TextEditingController();
+
+  Box<UserModel>? userBox;
+
+  @override
+  void initState() {
+    super.initState();
+    userBox = Hive.box<UserModel>("user");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +71,7 @@ class SignupScreen extends StatelessWidget {
                 passwordController: _passwordController,
                 nameController: _nameController,
                 schoolNumberController: _schoolNumberController,
+                userBox: userBox!,
               ),
               Align(
                 alignment: Alignment.bottomRight,

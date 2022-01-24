@@ -91,12 +91,13 @@ mixin _$SignupVM on _SignupVMBase, Store {
       dynamic userfacility,
       dynamic userschoolnumber,
       dynamic usermail,
-      dynamic userpassword) {
+      dynamic userpassword,
+      Box<UserModel> userBox) {
     final _$actionInfo = _$_SignupVMBaseActionController.startAction(
         name: '_SignupVMBase.nextStep');
     try {
       return super.nextStep(context, formkey, username, userfacility,
-          userschoolnumber, usermail, userpassword);
+          userschoolnumber, usermail, userpassword, userBox);
     } finally {
       _$_SignupVMBaseActionController.endAction(_$actionInfo);
     }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive/hive.dart';
+import 'package:math_eng_community/feature/signup/model/user_model.dart';
 import 'package:math_eng_community/feature/signup/viewmodel/signup_viewmodel.dart';
 import 'package:kartal/kartal.dart';
 import '../constants.dart';
@@ -13,12 +15,14 @@ class SignupButton extends StatelessWidget {
     required TextEditingController passwordController,
     required TextEditingController nameController,
     required TextEditingController schoolNumberController,
+    required Box<UserModel> userBox,
   })  : _formKey = formKey,
         _signupVM = signupVM,
         _emailController = emailController,
         _passwordController = passwordController,
         _nameController = nameController,
         _schoolNumberController = schoolNumberController,
+        _userBox = userBox,
         super(key: key);
 
   final GlobalKey<FormState> _formKey;
@@ -27,6 +31,7 @@ class SignupButton extends StatelessWidget {
   final TextEditingController _passwordController;
   final TextEditingController _nameController;
   final TextEditingController _schoolNumberController;
+  final Box<UserModel> _userBox;
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +44,15 @@ class SignupButton extends StatelessWidget {
             if (_formKey.currentState!.validate() &&
                 _signupVM.choosenValue != SignupConstants.dropdownHint) {
               _signupVM.nextStep(
-                  context,
-                  _formKey,
-                  _nameController.text,
-                  _signupVM.choosenValue,
-                  _schoolNumberController.text,
-                  _emailController.text,
-                  _passwordController.text);
+                context,
+                _formKey,
+                _nameController.text,
+                _signupVM.choosenValue,
+                _schoolNumberController.text,
+                _emailController.text,
+                _passwordController.text,
+                _userBox,
+              );
             }
           },
           child: Text(
