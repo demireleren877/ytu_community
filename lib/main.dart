@@ -2,23 +2,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive/hive.dart';
 import 'package:math_eng_community/core/services/firebase_services.dart';
 import 'package:math_eng_community/feature/verification/verification_screen.dart';
-import 'package:path_provider/path_provider.dart';
 import '/feature/home/home_screen.dart';
 import 'core/app_constants/color_constants.dart';
 import 'feature/login/login_screen.dart';
-import 'feature/signup/model/user_model.dart';
 import 'feature/signup/signup_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  final document = await getApplicationDocumentsDirectory();
-  Hive.init(document.path);
-  Hive.registerAdapter(UserModelAdapter());
-  await Hive.openBox<UserModel>("user");
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: AppColors.transparent));
   runApp(const MyApp());
@@ -42,7 +35,7 @@ class MyApp extends StatelessWidget {
         routes: {
           "/": (context) => LoginScreen(),
           "/homeScreen": (context) => const HomeScreen(),
-          "/signupScreen": (context) => const SignupScreen(),
+          "/signupScreen": (context) => SignupScreen(),
           "/verificationScreen": (context) => const VerificationScreen(),
         },
       ),

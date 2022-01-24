@@ -18,19 +18,15 @@ dependencies:
   flutter_mobx: ^2.0.3+2
   flutter_screenutil: ^5.1.0
   fluttertoast: ^8.0.8
-  hive: ^2.0.5
-  hive_flutter: ^1.1.0
   image_picker: ^0.8.4+4
   kartal: ^2.3.1
   lottie: ^1.2.1
   mobx: ^2.0.6+1
   mobx_codegen: ^2.0.5+2
-  path_provider: ^2.0.8
   syncfusion_flutter_pdfviewer: ^19.4.43-beta
   uuid: ^3.0.5
 
 dev_dependencies:
-  hive_generator: ^1.1.2
   build_runner: ^2.1.7
   flutter_lints: ^1.0.0
   flutter_test:

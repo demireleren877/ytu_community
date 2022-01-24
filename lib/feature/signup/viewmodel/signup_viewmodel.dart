@@ -1,10 +1,8 @@
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:math_eng_community/feature/choose_lecture/choose_lecture_screen.dart';
-import 'package:math_eng_community/feature/signup/model/user_model.dart';
 import 'package:mobx/mobx.dart';
 import 'package:uuid/uuid.dart';
 part 'signup_viewmodel.g.dart';
@@ -28,14 +26,7 @@ abstract class _SignupVMBase with Store {
 
   @action
   void nextStep(context, formkey, username, userfacility, userschoolnumber,
-      usermail, userpassword, Box<UserModel> userBox) {
-    userBox.add(UserModel(
-        email: usermail,
-        imageUrl: imageUrl,
-        facility: userfacility,
-        name: username,
-        schoolNumber: userschoolnumber));
-    userBox.close();
+      usermail, userpassword) {
     if (formkey.currentState!.validate()) {
       Navigator.push(
         context,
