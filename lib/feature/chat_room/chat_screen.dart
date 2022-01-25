@@ -46,7 +46,7 @@ class _ChatScreenState extends State<ChatScreen> {
       children: <Widget>[
         Expanded(
           child: StreamBuilder(
-            stream: FirebaseServices().snapshot(widget.currentLecture),
+            stream: FirebaseServices().forumSnapshots(widget.currentLecture),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               return !snapshot.hasData
                   ? const CenteredProgressIndicator()

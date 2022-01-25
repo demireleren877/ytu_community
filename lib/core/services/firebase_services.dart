@@ -6,7 +6,7 @@ class FirebaseServices {
   static final firestore = FirebaseFirestore.instance;
   static CollectionReference user = firestore.collection("users");
   static CollectionReference forums = firestore.collection("forums");
-  snapshot(currentLecture) {
+  forumSnapshots(currentLecture) {
     return forums
         .doc(currentLecture)
         .collection("chats")

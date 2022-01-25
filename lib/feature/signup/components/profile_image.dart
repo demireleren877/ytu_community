@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/core/app_constants/path_constants.dart';
+import 'package:math_eng_community/core/init/theme_service.dart';
 import 'package:math_eng_community/feature/signup/viewmodel/signup_viewmodel.dart';
 
 class ProfileImage extends StatelessWidget {
@@ -22,8 +23,9 @@ class ProfileImage extends StatelessWidget {
             backgroundColor: AppColors.transparent,
             backgroundImage: signupVM.imageFile != null
                 ? FileImage(signupVM.imageFile!)
-                : const AssetImage(PathConstants.profileImagePathDark)
-                    as ImageProvider,
+                : AssetImage(ThemeService().isDark()
+                    ? PathConstants.darkLogoPath
+                    : PathConstants.logoPath) as ImageProvider,
           ),
           Positioned(
             bottom: 0,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:math_eng_community/core/services/firebase_services.dart';
+import 'package:math_eng_community/feature/proffesors/professors_screen.dart';
 import 'package:math_eng_community/feature/verification/verification_screen.dart';
 import '/feature/home/home_screen.dart';
 import 'core/app_constants/color_constants.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
           "/homeScreen": (context) => const HomeScreen(),
           "/signupScreen": (context) => SignupScreen(),
           "/verificationScreen": (context) => const VerificationScreen(),
+          "/professorScreen": (context) => ProfesorScreen()
         },
       ),
     );
