@@ -3,7 +3,6 @@ import 'package:kartal/kartal.dart';
 import 'package:flutter/material.dart';
 import 'package:math_eng_community/core/data/profesors_informations.dart';
 import 'package:math_eng_community/core/utilities/app_drawer.dart';
-import 'package:math_eng_community/feature/email/email_screen.dart';
 import 'package:math_eng_community/feature/proffesors/constants.dart';
 
 import 'components/button_column.dart';
@@ -34,7 +33,10 @@ class ProfesorScreen extends StatelessWidget {
                 children: [
                   ProfesorPhoto(index: index),
                   ContactList(index: index),
-                  ButtonColumn(index: index),
+                  ButtonColumn(
+                    index: index,
+                    avesis: ProfesorInfos.profesors[index].avesisUrl,
+                  ),
                 ],
               ),
             ),

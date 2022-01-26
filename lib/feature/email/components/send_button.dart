@@ -29,7 +29,7 @@ class SendButton extends StatelessWidget {
       width: 150.w,
       child: ElevatedButton(
         onPressed: () async {
-          _emailVM.sendEmail(
+          _emailVM.sendEmail(context,
               userName: await FirebaseServices.user
                   .doc(FirebaseAuth.instance.currentUser!.email)
                   .get()

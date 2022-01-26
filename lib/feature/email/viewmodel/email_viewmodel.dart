@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:http/http.dart' as http;
 part 'email_viewmodel.g.dart';
@@ -6,7 +7,7 @@ part 'email_viewmodel.g.dart';
 class EmailVM = _EmailVMBase with _$EmailVM;
 
 abstract class _EmailVMBase with Store {
-  Future sendEmail(
+  Future sendEmail(context,
       {required String userName,
       required String userEmail,
       required String toEmail,
@@ -39,6 +40,16 @@ abstract class _EmailVMBase with Store {
         },
       ),
     );
-    print(response.body);
+    if (response.body == "OK") {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          backgroundColor: Colors.green,
+          content: Text(
+            "Mail Gönderildi.",
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+        ),
+      );
+    }
   }
 }
