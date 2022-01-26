@@ -3,18 +3,21 @@ import 'package:kartal/kartal.dart';
 import 'package:flutter/material.dart';
 import 'package:math_eng_community/core/data/profesors_informations.dart';
 import 'package:math_eng_community/core/utilities/app_drawer.dart';
-import 'package:math_eng_community/feature/home/viewmodel/home_viewmodel.dart';
+import 'package:math_eng_community/feature/email/email_screen.dart';
+import 'package:math_eng_community/feature/proffesors/constants.dart';
+
+import 'components/button_column.dart';
+import 'components/contact_list.dart';
+import 'components/profesor_photo.dart';
 
 class ProfesorScreen extends StatelessWidget {
-  ProfesorScreen({Key? key}) : super(key: key);
-
-  final HomeVM _homeVM = HomeVM();
+  const ProfesorScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Öğretim Üyeleri İletişim"),
+        title: const Text(ProfesorConstants.contactTitle),
         centerTitle: true,
       ),
       drawer: const AppDrawer(),
@@ -29,33 +32,9 @@ class ProfesorScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  CircleAvatar(
-                    radius: 35.r,
-                    backgroundImage:
-                        NetworkImage(ProfesorInfos.profesors[index].imageUrl),
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(ProfesorInfos.profesors[index].name),
-                      Text("Telefon: " +
-                          ProfesorInfos.profesors[index].phoneNumber),
-                      Text("E-Mail: " + ProfesorInfos.profesors[index].email),
-                      Text("Oda: " + ProfesorInfos.profesors[index].room),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.email_outlined),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.notifications_outlined),
-                      ),
-                    ],
-                  ),
+                  ProfesorPhoto(index: index),
+                  ContactList(index: index),
+                  ButtonColumn(index: index),
                 ],
               ),
             ),

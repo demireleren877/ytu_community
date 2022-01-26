@@ -18,12 +18,14 @@ dependencies:
   flutter_mobx: ^2.0.3+2
   flutter_screenutil: ^5.1.0
   fluttertoast: ^8.0.8
+  http: ^0.13.4
   image_picker: ^0.8.4+4
   kartal: ^2.3.1
   lottie: ^1.2.1
   mobx: ^2.0.6+1
   mobx_codegen: ^2.0.5+2
   syncfusion_flutter_pdfviewer: ^19.4.43-beta
+  url_launcher: ^6.0.18
   uuid: ^3.0.5
 
 dev_dependencies:
