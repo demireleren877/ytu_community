@@ -8,6 +8,7 @@ import 'package:math_eng_community/core/utilities/centered_progress.dart';
 import 'package:math_eng_community/feature/forum_page/forum_screen.dart';
 import 'package:math_eng_community/feature/home/viewmodel/home_viewmodel.dart';
 import 'package:math_eng_community/feature/lecture_content/lecture_content_screen.dart';
+import 'package:math_eng_community/feature/profile/profile_screen.dart';
 import 'components/bottom_nav_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -61,7 +62,7 @@ class HomeScreen extends StatelessWidget {
           Container(color: Colors.lightBlueAccent),
           const ForumScreen(),
           const LectureContentScreen(),
-          Container(color: Colors.redAccent),
+          ProfileScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavBar(homeVM: _homeVM),

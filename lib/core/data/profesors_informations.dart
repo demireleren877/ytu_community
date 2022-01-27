@@ -19,7 +19,7 @@ class ProfesorInfos {
   static List<ProfesorModel> profesors = [
     ProfesorModel(
         avesisUrl: 'https://avesis.yildiz.edu.tr/tasci/',
-        email: 'l5818046@std.yildiz.edu.tr', //'tasci@yildiz.edu.tr',
+        email: 'tasci@yildiz.edu.tr', //'tasci@yildiz.edu.tr',
         imageUrl:
             'http://www.mtm.yildiz.edu.tr/media/images/personel/Dosya_000%20(1).jpeg',
         name: 'Prof. Dr. Fatih TAŞÇI',

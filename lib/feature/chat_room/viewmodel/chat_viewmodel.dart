@@ -12,7 +12,7 @@ class ChatVM = _ChatVMBase with _$ChatVM;
 
 abstract class _ChatVMBase with Store {
   @observable
-  late File imageFile;
+  File? imageFile;
 
   @action
   sendMessage(
@@ -64,7 +64,7 @@ abstract class _ChatVMBase with Store {
 
     var ref =
         FirebaseStorage.instance.ref().child("images").child("$fileName.jpg");
-    var uploadTask = await ref.putFile(imageFile).catchError((error) async {});
+    var uploadTask = await ref.putFile(imageFile!).catchError((error) async {});
     String imageUrl = await uploadTask.ref.getDownloadURL();
     await FirebaseServices.forums
         .doc(currentLecture)

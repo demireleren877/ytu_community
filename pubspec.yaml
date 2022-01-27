@@ -18,6 +18,7 @@ dependencies:
   flutter_mobx: ^2.0.3+2
   flutter_screenutil: ^5.1.0
   fluttertoast: ^8.0.8
+  html: ^0.15.0
   http: ^0.13.4
   image_picker: ^0.8.4+4
   kartal: ^2.3.1

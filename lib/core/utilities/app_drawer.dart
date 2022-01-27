@@ -78,12 +78,15 @@ class AppDrawer extends StatelessWidget {
                   title: const Text("Sınav Takvimim"),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, "/foodScreen", (route) => false);
+                  },
                   leading: Icon(
-                    Icons.emoji_food_beverage_outlined,
+                    Icons.dinner_dining_outlined,
                     size: 30.sp,
                   ),
-                  title: const Text("Yemekhane Listesi"),
+                  title: const Text("Yemekhane Menüsü"),
                 ),
                 const Divider(
                   thickness: 1,
@@ -96,7 +99,11 @@ class AppDrawer extends StatelessWidget {
                 InkWell(
                   splashColor: Colors.transparent,
                   hoverColor: Colors.transparent,
-                  onTap: () {},
+                  onTap: () {
+                    FirebaseServices.auth.signOut().then((value) =>
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, "/", (route) => false));
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

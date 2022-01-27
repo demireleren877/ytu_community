@@ -12,13 +12,13 @@ mixin _$ChatVM on _ChatVMBase, Store {
   final _$imageFileAtom = Atom(name: '_ChatVMBase.imageFile');
 
   @override
-  File get imageFile {
+  File? get imageFile {
     _$imageFileAtom.reportRead();
     return super.imageFile;
   }
 
   @override
-  set imageFile(File value) {
+  set imageFile(File? value) {
     _$imageFileAtom.reportWrite(value, super.imageFile, () {
       super.imageFile = value;
     });
