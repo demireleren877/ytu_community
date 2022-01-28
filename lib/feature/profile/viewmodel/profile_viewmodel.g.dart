@@ -24,6 +24,59 @@ mixin _$ProfileVM on _ProfileVMBase, Store {
     });
   }
 
+  final _$imageUrlAtom = Atom(name: '_ProfileVMBase.imageUrl');
+
+  @override
+  String? get imageUrl {
+    _$imageUrlAtom.reportRead();
+    return super.imageUrl;
+  }
+
+  @override
+  set imageUrl(String? value) {
+    _$imageUrlAtom.reportWrite(value, super.imageUrl, () {
+      super.imageUrl = value;
+    });
+  }
+
+  final _$imageFileAtom = Atom(name: '_ProfileVMBase.imageFile');
+
+  @override
+  File? get imageFile {
+    _$imageFileAtom.reportRead();
+    return super.imageFile;
+  }
+
+  @override
+  set imageFile(File? value) {
+    _$imageFileAtom.reportWrite(value, super.imageFile, () {
+      super.imageFile = value;
+    });
+  }
+
+  final _$updateProfileAsyncAction =
+      AsyncAction('_ProfileVMBase.updateProfile');
+
+  @override
+  Future<dynamic> updateProfile() {
+    return _$updateProfileAsyncAction.run(() => super.updateProfile());
+  }
+
+  final _$setProfileImageAsyncAction =
+      AsyncAction('_ProfileVMBase.setProfileImage');
+
+  @override
+  Future setProfileImage() {
+    return _$setProfileImageAsyncAction.run(() => super.setProfileImage());
+  }
+
+  final _$uploadImageAsyncAction = AsyncAction('_ProfileVMBase.uploadImage');
+
+  @override
+  Future uploadImage() {
+    return _$uploadImageAsyncAction.run(() => super.uploadImage());
+  }
+
   final _$_ProfileVMBaseActionController =
       ActionController(name: '_ProfileVMBase');
 
@@ -52,7 +105,9 @@ mixin _$ProfileVM on _ProfileVMBase, Store {
   @override
   String toString() {
     return '''
-ischangable: ${ischangable}
+ischangable: ${ischangable},
+imageUrl: ${imageUrl},
+imageFile: ${imageFile}
     ''';
   }
 }

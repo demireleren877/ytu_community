@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:math_eng_community/core/utilities/app_drawer.dart';
 import 'package:math_eng_community/feature/foodlist/constants.dart';
@@ -29,29 +28,27 @@ class _FoodScreenState extends State<FoodScreen> {
     return Scaffold(
       drawer: const AppDrawer(),
       appBar: buildAppBar(),
-      body: Observer(builder: (_) {
-        return Center(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Text(
-                  FoodConstants.lunchMenuTitle,
-                  style: context.textTheme.headline4,
-                ),
-                SizedBox(height: 20.h),
-                LunchMenuCard(foodVM: _foodVM),
-                SizedBox(height: 50.h),
-                Text(
-                  FoodConstants.dinnerMenuTitle,
-                  style: context.textTheme.headline4,
-                ),
-                SizedBox(height: 20.h),
-                DinnerMenuCard(foodVM: _foodVM),
-              ],
-            ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Text(
+                FoodConstants.lunchMenuTitle,
+                style: context.textTheme.headline4,
+              ),
+              SizedBox(height: 20.h),
+              LunchMenuCard(foodVM: _foodVM),
+              SizedBox(height: 50.h),
+              Text(
+                FoodConstants.dinnerMenuTitle,
+                style: context.textTheme.headline4,
+              ),
+              SizedBox(height: 20.h),
+              DinnerMenuCard(foodVM: _foodVM),
+            ],
           ),
-        );
-      }),
+        ),
+      ),
     );
   }
 

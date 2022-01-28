@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:math_eng_community/core/app_constants/color_constants.dart';
+import 'package:math_eng_community/core/app_constants/path_constants.dart';
 import 'package:math_eng_community/feature/profile/viewmodel/profile_viewmodel.dart';
 
 class ProfilePicture extends StatelessWidget {
@@ -21,7 +22,10 @@ class ProfilePicture extends StatelessWidget {
         CircleAvatar(
           radius: 75.r,
           backgroundColor: AppColors.transparent,
-          backgroundImage: NetworkImage(snapshot.data["profileImageUrl"]),
+          backgroundImage: snapshot.data["profileImageUrl"] != null
+              ? NetworkImage(snapshot.data["profileImageUrl"])
+              : const AssetImage(PathConstants.profileImagePathDark)
+                  as ImageProvider,
         ),
         Visibility(
           visible: _profileVM.ischangable,
@@ -29,7 +33,9 @@ class ProfilePicture extends StatelessWidget {
             bottom: 0,
             right: 0,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                _profileVM.setProfileImage();
+              },
               icon: const Icon(
                 Icons.add_photo_alternate_rounded,
                 size: 30,

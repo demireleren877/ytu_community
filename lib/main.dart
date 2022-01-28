@@ -33,14 +33,14 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Material App',
         initialRoute:
-            FirebaseServices.auth.currentUser == null ? "/" : "/homeScreen",
+            FirebaseServices.auth.currentUser != null ? "/homeScreen" : "/",
         routes: {
           "/": (context) => LoginScreen(),
           "/homeScreen": (context) => const HomeScreen(),
           "/signupScreen": (context) => SignupScreen(),
           "/verificationScreen": (context) => const VerificationScreen(),
-          "/professorScreen": (context) => const ProfesorScreen(),
-          "/foodScreen": (context) => FoodScreen()
+          "/profesorScreen": (context) => const ProfesorScreen(),
+          "/foodScreen": (context) => const FoodScreen()
         },
       ),
     );

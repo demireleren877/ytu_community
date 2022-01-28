@@ -15,6 +15,7 @@ class DoneButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
+        _profileVM.updateProfile();
         _profileVM.editProfile();
       },
       icon: Icon(

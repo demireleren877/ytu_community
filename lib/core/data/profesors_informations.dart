@@ -212,7 +212,7 @@ class ProfesorInfos {
         email: 'bibrahim@yildiz.edu.tr',
         imageUrl:
             'http://www.mtm.yildiz.edu.tr/media/images/personel/image%20(5).jpg',
-        name: 'Dr. Öğr. Üyesi Bayram Ali İBRAHİMOĞLU',
+        name: 'Dr. Öğr. Üyesi Bayram Ali İBRAHİ...',
         phoneNumber: '0212 383 46 14',
         room: 'A-225'),
     ProfesorModel(

@@ -47,7 +47,7 @@ class SendButton extends StatelessWidget {
           children: [
             Text(
               SendEmailConstants.sendButtonText,
-              style: context.textTheme.headline6,
+              style: context.textTheme.headline6?.copyWith(color: Colors.white),
             ),
             const Icon(Icons.send)
           ],

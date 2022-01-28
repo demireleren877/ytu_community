@@ -49,8 +49,15 @@ class AppDrawer extends StatelessWidget {
                 ),
                 ListTile(
                   onTap: () {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, "/homeScreen", (route) => false);
+                    Navigator.popUntil(context, (route) {
+                      if (route.settings.name == "/homeScreen") {
+                        Navigator.pop(context);
+                      } else {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, "/homeScreen", (route) => false);
+                      }
+                      return true;
+                    });
                   },
                   leading: Icon(
                     Icons.home_outlined,
@@ -60,8 +67,15 @@ class AppDrawer extends StatelessWidget {
                 ),
                 ListTile(
                   onTap: () {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, "/professorScreen", (route) => false);
+                    Navigator.popUntil(context, (route) {
+                      if (route.settings.name == "/profesorScreen") {
+                        Navigator.pop(context);
+                      } else {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, "/profesorScreen", (route) => false);
+                      }
+                      return true;
+                    });
                   },
                   leading: Icon(
                     Icons.contact_page_outlined,
@@ -79,8 +93,15 @@ class AppDrawer extends StatelessWidget {
                 ),
                 ListTile(
                   onTap: () {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, "/foodScreen", (route) => false);
+                    Navigator.popUntil(context, (route) {
+                      if (route.settings.name == "/foodScreen") {
+                        Navigator.pop(context);
+                      } else {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, "/foodScreen", (route) => false);
+                      }
+                      return true;
+                    });
                   },
                   leading: Icon(
                     Icons.dinner_dining_outlined,

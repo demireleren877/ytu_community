@@ -17,9 +17,9 @@ class ReceiverInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: context.paddingLow,
+    return SizedBox(
       height: 120.h,
+      width: context.width,
       child: Card(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -29,18 +29,22 @@ class ReceiverInfoCard extends StatelessWidget {
               radius: 35.r,
               backgroundImage: NetworkImage(imageUrl),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  name,
-                  style: context.textTheme.headline6?.copyWith(fontSize: 18.sp),
-                ),
-                Text(
-                  mail,
-                  style: context.textTheme.headline6?.copyWith(fontSize: 18.sp),
-                ),
-              ],
+            Flexible(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    name,
+                    style:
+                        context.textTheme.headline6?.copyWith(fontSize: 16.sp),
+                  ),
+                  Text(
+                    mail,
+                    style:
+                        context.textTheme.headline6?.copyWith(fontSize: 16.sp),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

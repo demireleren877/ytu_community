@@ -2,10 +2,8 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:kartal/kartal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/core/services/firebase_services.dart';
 import 'package:math_eng_community/core/utilities/centered_progress.dart';
-import 'package:math_eng_community/core/utilities/input_decoration.dart';
 import 'package:math_eng_community/feature/profile/viewmodel/profile_viewmodel.dart';
 
 import 'components/done_button.dart';
