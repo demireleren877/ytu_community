@@ -5,6 +5,8 @@ import 'package:math_eng_community/core/app_constants/path_constants.dart';
 import 'package:math_eng_community/core/services/firebase_services.dart';
 import 'package:math_eng_community/core/utilities/app_drawer.dart';
 import 'package:math_eng_community/core/utilities/centered_progress.dart';
+import 'package:math_eng_community/feature/announcement/announcement_screen.dart';
+import 'package:math_eng_community/feature/announcement/viewmodel/announcement_viewmodel.dart';
 import 'package:math_eng_community/feature/forum_page/forum_screen.dart';
 import 'package:math_eng_community/feature/home/viewmodel/home_viewmodel.dart';
 import 'package:math_eng_community/feature/lecture_content/lecture_content_screen.dart';
@@ -59,7 +61,7 @@ class HomeScreen extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         controller: _homeVM.pageController,
         children: [
-          Container(color: Colors.lightBlueAccent),
+          AnnouncementScreen(),
           const ForumScreen(),
           const LectureContentScreen(),
           ProfileScreen(),
