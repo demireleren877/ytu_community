@@ -8,7 +8,7 @@ abstract class _HomeVMBase with Store {
   final PageController pageController = PageController();
 
   List<String> appTitles = [
-    "AnaSayfa",
+    "Duyurular",
     "Forum Sayfasına Hoşgeldiniz",
     "Ders İçerik Listesi",
     "Profilim"

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:math_eng_community/core/services/firebase_services.dart';
+import 'package:math_eng_community/feature/exam_schedule/schedule_screen.dart';
 import 'package:math_eng_community/feature/foodlist/food_screen.dart';
 import 'package:math_eng_community/feature/proffesors/professors_screen.dart';
 import 'package:math_eng_community/feature/verification/verification_screen.dart';
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget {
           "/signupScreen": (context) => SignupScreen(),
           "/verificationScreen": (context) => const VerificationScreen(),
           "/profesorScreen": (context) => const ProfesorScreen(),
-          "/foodScreen": (context) => const FoodScreen()
+          "/foodScreen": (context) => const FoodScreen(),
+          "/scheduleScreen": (context) => const ExamScheduleScreen()
         },
       ),
     );

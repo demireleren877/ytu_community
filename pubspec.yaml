@@ -21,6 +21,7 @@ dependencies:
   html: ^0.15.0
   http: ^0.13.4
   image_picker: ^0.8.4+4
+  intl: ^0.17.0
   kartal: ^2.3.1
   lottie: ^1.2.1
   mobx: ^2.0.6+1

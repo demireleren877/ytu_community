@@ -84,7 +84,17 @@ class AppDrawer extends StatelessWidget {
                   title: const Text("Öğretim Görevlileri"),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.popUntil(context, (route) {
+                      if (route.settings.name == "/scheduleScreen") {
+                        Navigator.pop(context);
+                      } else {
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, "/scheduleScreen", (route) => false);
+                      }
+                      return true;
+                    });
+                  },
                   leading: Icon(
                     Icons.calendar_view_month_outlined,
                     size: 30.sp,

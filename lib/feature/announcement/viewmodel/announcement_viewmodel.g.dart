@@ -9,33 +9,51 @@ part of 'announcement_viewmodel.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$AnnouncementVM on _AnnouncementVMBase, Store {
-  final _$announcementsAtom = Atom(name: '_AnnouncementVMBase.announcements');
+  final _$announcementTitlesAtom =
+      Atom(name: '_AnnouncementVMBase.announcementTitles');
 
   @override
-  ObservableList<String> get announcements {
-    _$announcementsAtom.reportRead();
-    return super.announcements;
+  ObservableList<String>? get announcementTitles {
+    _$announcementTitlesAtom.reportRead();
+    return super.announcementTitles;
   }
 
   @override
-  set announcements(ObservableList<String> value) {
-    _$announcementsAtom.reportWrite(value, super.announcements, () {
-      super.announcements = value;
+  set announcementTitles(ObservableList<String>? value) {
+    _$announcementTitlesAtom.reportWrite(value, super.announcementTitles, () {
+      super.announcementTitles = value;
     });
   }
 
-  final _$getAnnouncementAsyncAction =
-      AsyncAction('_AnnouncementVMBase.getAnnouncement');
+  final _$announcementLinksAtom =
+      Atom(name: '_AnnouncementVMBase.announcementLinks');
 
   @override
-  Future<dynamic> getAnnouncement() {
-    return _$getAnnouncementAsyncAction.run(() => super.getAnnouncement());
+  ObservableList<String>? get announcementLinks {
+    _$announcementLinksAtom.reportRead();
+    return super.announcementLinks;
+  }
+
+  @override
+  set announcementLinks(ObservableList<String>? value) {
+    _$announcementLinksAtom.reportWrite(value, super.announcementLinks, () {
+      super.announcementLinks = value;
+    });
+  }
+
+  final _$getAnnouncementsAsyncAction =
+      AsyncAction('_AnnouncementVMBase.getAnnouncements');
+
+  @override
+  Future<dynamic> getAnnouncements() {
+    return _$getAnnouncementsAsyncAction.run(() => super.getAnnouncements());
   }
 
   @override
   String toString() {
     return '''
-announcements: ${announcements}
+announcementTitles: ${announcementTitles},
+announcementLinks: ${announcementLinks}
     ''';
   }
 }
