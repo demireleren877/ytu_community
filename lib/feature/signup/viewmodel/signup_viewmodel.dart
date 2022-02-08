@@ -19,6 +19,9 @@ abstract class _SignupVMBase with Store {
   @observable
   File? imageFile;
 
+  @observable
+  bool fromCamera = true;
+
   @action
   void onFacilityChanged(value) {
     choosenValue = value;
@@ -47,13 +50,17 @@ abstract class _SignupVMBase with Store {
   @action
   setProfileImage() async {
     ImagePicker _picker = ImagePicker();
-    await _picker.pickImage(source: ImageSource.camera).then((xFile) => {
-          if (xFile != null)
-            {
-              imageFile = File(xFile.path),
-              uploadImage(),
-            }
-        });
+    await _picker
+        .pickImage(
+            source:
+                fromCamera == true ? ImageSource.camera : ImageSource.gallery)
+        .then((xFile) => {
+              if (xFile != null)
+                {
+                  imageFile = File(xFile.path),
+                  uploadImage(),
+                }
+            });
   }
 
   @action
