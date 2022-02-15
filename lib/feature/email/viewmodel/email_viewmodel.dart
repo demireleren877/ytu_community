@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 import 'package:http/http.dart' as http;
 part 'email_viewmodel.g.dart';
 
@@ -14,9 +16,9 @@ abstract class _EmailVMBase with Store {
       required String subject,
       required String toName,
       required String message}) async {
-    const serviceId = "service_ysh5bo8";
-    const templateId = "template_w4j3i3d";
-    const userId = "user_3ARyMqIRGkMdKGuYFEP8i";
+    final serviceId = dotenv.env['EMAIL_SERVICE_ID'];
+    final templateId = dotenv.env['EMAIL_TEMPLATE_ID'];
+    final userId = dotenv.env["EMAIL_API_USER_ID"];
     final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
     final response = await http.post(
       url,

@@ -11,12 +11,14 @@ import '/feature/home/home_screen.dart';
 import 'core/app_constants/color_constants.dart';
 import 'feature/login/login_screen.dart';
 import 'feature/signup/signup_screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: AppColors.transparent));
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
