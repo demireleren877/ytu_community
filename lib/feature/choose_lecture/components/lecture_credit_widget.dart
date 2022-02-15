@@ -12,7 +12,7 @@ class LectureCredit extends StatelessWidget {
 
   final int index;
   final ChooseLectureVM chooseLectureVM;
-  final List<ClassesModel> copyLectures;
+  final List<LectureModel> copyLectures;
 
   @override
   Widget build(BuildContext context) {

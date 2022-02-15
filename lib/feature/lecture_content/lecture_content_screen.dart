@@ -17,7 +17,7 @@ class LectureContentScreen extends StatefulWidget {
 class _LectureContentScreenState extends State<LectureContentScreen> {
   final TextEditingController _searchController = TextEditingController();
   final LectureContentVM _lectureContentVM = LectureContentVM();
-  List<ClassesModel> _searchList = AllLectures.lectures;
+  List<LectureModel> _searchList = AllLectures.lectures;
   bool isTyping = false;
 
   @override

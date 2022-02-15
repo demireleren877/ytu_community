@@ -11,7 +11,7 @@ class ChooseLectureVM = _ChooseLectureVMBase with _$ChooseLectureVM;
 
 abstract class _ChooseLectureVMBase with Store {
   @observable
-  List<ClassesModel> lectures = AllLectures.lectures;
+  List<LectureModel> lectures = AllLectures.lectures;
 
   @observable
   int totalCredit = 0;
@@ -20,7 +20,7 @@ abstract class _ChooseLectureVMBase with Store {
   ObservableList<String> choosenLectures = ObservableList<String>.of([]);
 
   @observable
-  ObservableList<ClassesModel> copyLectures =
+  ObservableList<LectureModel> copyLectures =
       ObservableList.of(AllLectures.lectures);
 
   @action

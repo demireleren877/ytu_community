@@ -8,14 +8,14 @@ class LectureCard extends StatelessWidget {
   const LectureCard({
     Key? key,
     required LectureContentVM lectureContentVM,
-    required List<ClassesModel> searchList,
+    required List<LectureModel> searchList,
     required this.index,
   })  : _lectureContentVM = lectureContentVM,
         _searchList = searchList,
         super(key: key);
 
   final LectureContentVM _lectureContentVM;
-  final List<ClassesModel> _searchList;
+  final List<LectureModel> _searchList;
   final int index;
 
   @override

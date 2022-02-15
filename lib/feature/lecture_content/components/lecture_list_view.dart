@@ -8,13 +8,13 @@ import 'lecture_card.dart';
 class LectureListView extends StatelessWidget {
   const LectureListView({
     Key? key,
-    required List<ClassesModel> searchList,
+    required List<LectureModel> searchList,
     required LectureContentVM lectureContentVM,
   })  : _searchList = searchList,
         _lectureContentVM = lectureContentVM,
         super(key: key);
 
-  final List<ClassesModel> _searchList;
+  final List<LectureModel> _searchList;
   final LectureContentVM _lectureContentVM;
 
   @override

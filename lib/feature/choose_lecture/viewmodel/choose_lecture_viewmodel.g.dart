@@ -12,13 +12,13 @@ mixin _$ChooseLectureVM on _ChooseLectureVMBase, Store {
   final _$lecturesAtom = Atom(name: '_ChooseLectureVMBase.lectures');
 
   @override
-  List<ClassesModel> get lectures {
+  List<LectureModel> get lectures {
     _$lecturesAtom.reportRead();
     return super.lectures;
   }
 
   @override
-  set lectures(List<ClassesModel> value) {
+  set lectures(List<LectureModel> value) {
     _$lecturesAtom.reportWrite(value, super.lectures, () {
       super.lectures = value;
     });
@@ -58,13 +58,13 @@ mixin _$ChooseLectureVM on _ChooseLectureVMBase, Store {
   final _$copyLecturesAtom = Atom(name: '_ChooseLectureVMBase.copyLectures');
 
   @override
-  ObservableList<ClassesModel> get copyLectures {
+  ObservableList<LectureModel> get copyLectures {
     _$copyLecturesAtom.reportRead();
     return super.copyLectures;
   }
 
   @override
-  set copyLectures(ObservableList<ClassesModel> value) {
+  set copyLectures(ObservableList<LectureModel> value) {
     _$copyLecturesAtom.reportWrite(value, super.copyLectures, () {
       super.copyLectures = value;
     });

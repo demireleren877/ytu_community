@@ -30,7 +30,7 @@ class ChooseLectureScreen extends StatefulWidget {
 }
 
 class _ChooseLectureScreenState extends State<ChooseLectureScreen> {
-  late final List<ClassesModel> copyLectures;
+  late final List<LectureModel> copyLectures;
   final ChooseLectureVM _chooseLectureVM = ChooseLectureVM();
 
   @override

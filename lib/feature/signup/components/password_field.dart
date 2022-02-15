@@ -21,6 +21,7 @@ class PasswordField extends StatelessWidget {
         if (value!.length < 6) {
           return SignupConstants.passwordValidationError;
         }
+        return null;
       },
       decoration:
           ProjectInputs().copyWith(labelText: SignupConstants.labelPassword),

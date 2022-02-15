@@ -54,6 +54,21 @@ mixin _$SignupVM on _SignupVMBase, Store {
     });
   }
 
+  final _$fromCameraAtom = Atom(name: '_SignupVMBase.fromCamera');
+
+  @override
+  bool get fromCamera {
+    _$fromCameraAtom.reportRead();
+    return super.fromCamera;
+  }
+
+  @override
+  set fromCamera(bool value) {
+    _$fromCameraAtom.reportWrite(value, super.fromCamera, () {
+      super.fromCamera = value;
+    });
+  }
+
   final _$setProfileImageAsyncAction =
       AsyncAction('_SignupVMBase.setProfileImage');
 
@@ -107,7 +122,8 @@ mixin _$SignupVM on _SignupVMBase, Store {
     return '''
 choosenValue: ${choosenValue},
 imageUrl: ${imageUrl},
-imageFile: ${imageFile}
+imageFile: ${imageFile},
+fromCamera: ${fromCamera}
     ''';
   }
 }
