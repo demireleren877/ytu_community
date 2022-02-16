@@ -20,7 +20,6 @@ Flutter ile geliştirmekte olduğum uygulamanın amacı öğrencilerin sadece ge
   <img src= "https://user-images.githubusercontent.com/62947531/154274556-26985f07-0d08-45cc-a5d4-d3adb479e8d8.png" width = "200" >
   <img src= "https://user-images.githubusercontent.com/62947531/154274564-6637c906-d3fb-4b60-8f73-4096d7599e85.png" width = "200" >
   <img src= "https://user-images.githubusercontent.com/62947531/154274569-6841f8d4-50cc-4343-a01b-10faee5ee839.png" width = "200" >
-  <img src="https://user-images.githubusercontent.com/62947531/154274569-6841f8d4-50cc-4343-a01b-10faee5ee839.png" width="200">
   <img src="https://user-images.githubusercontent.com/62947531/154274575-338a60d5-5676-4dd4-9b90-ed981591dd33.png" width="200">
   <img src="https://user-images.githubusercontent.com/62947531/154274583-e7af0858-e046-4a80-91a1-872574625d7d.png" width="200">
   <img src="https://user-images.githubusercontent.com/62947531/154274586-cafb5e92-06dd-4714-8b4d-19d86573600d.png" width="200">
