@@ -26,7 +26,7 @@ class ProfesorScreen extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Container(
             padding: context.paddingLow,
-            height: 120.h,
+            height: 140.h,
             child: Card(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
