@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/core/app_constants/path_constants.dart';
 import 'package:kartal/kartal.dart';
 import 'package:math_eng_community/core/init/theme_service.dart';
@@ -30,7 +31,7 @@ class AppDrawer extends StatelessWidget {
                 SizedBox(height: 75.h),
                 CircleAvatar(
                   radius: 50.r,
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: AppColors.transparent,
                   backgroundImage: output["profileImageUrl"] == null
                       ? AssetImage(ThemeService().isDark()
                           ? PathConstants.darkLogoPath
@@ -128,8 +129,8 @@ class AppDrawer extends StatelessWidget {
                 ),
                 SizedBox(height: 20.h),
                 InkWell(
-                  splashColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
+                  splashColor: AppColors.transparent,
+                  hoverColor: AppColors.transparent,
                   onTap: () {
                     FirebaseServices.auth.signOut().then((value) =>
                         Navigator.pushNamedAndRemoveUntil(

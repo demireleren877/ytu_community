@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/core/data/class_list.dart';
 import 'package:math_eng_community/feature/lecture_content/viewmodel/lecture_content_viewmodel.dart';
 import 'package:kartal/kartal.dart';
@@ -29,11 +30,12 @@ class LectureCard extends StatelessWidget {
           _searchList[index].name,
         ),
         child: Card(
-          color: Colors.orange,
+          color: AppColors.orange,
           child: Center(
             child: Text(
               _searchList[index].name,
-              style: context.textTheme.headline6?.copyWith(color: Colors.white),
+              style:
+                  context.textTheme.headline6?.copyWith(color: AppColors.white),
             ),
           ),
         ),

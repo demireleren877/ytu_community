@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/core/services/firebase_services.dart';
 import 'package:math_eng_community/feature/email/constants.dart';
 import 'package:math_eng_community/feature/email/viewmodel/email_viewmodel.dart';
@@ -47,7 +48,8 @@ class SendButton extends StatelessWidget {
           children: [
             Text(
               SendEmailConstants.sendButtonText,
-              style: context.textTheme.headline6?.copyWith(color: Colors.white),
+              style:
+                  context.textTheme.headline6?.copyWith(color: AppColors.white),
             ),
             const Icon(Icons.send)
           ],

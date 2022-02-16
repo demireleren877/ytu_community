@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/core/data/class_list.dart';
 import 'package:math_eng_community/feature/choose_lecture/viewmodel/choose_lecture_viewmodel.dart';
 import 'package:kartal/kartal.dart';
@@ -76,7 +77,7 @@ class _ChooseLectureScreenState extends State<ChooseLectureScreen> {
                         index: index,
                         chooseLectureVM: _chooseLectureVM,
                         copyLectures: copyLectures),
-                    activeColor: Colors.green,
+                    activeColor: AppColors.green,
                   );
                 },
                 itemCount: copyLectures.length,

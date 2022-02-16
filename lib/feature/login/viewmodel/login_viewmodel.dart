@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:mobx/mobx.dart';
 part 'login_viewmodel.g.dart';
 
@@ -43,7 +44,7 @@ abstract class _LoginVMBase with Store {
         Fluttertoast.showToast(
             msg: error.message ?? "Hatalı Giriş Denemesi",
             gravity: ToastGravity.CENTER,
-            textColor: Colors.red);
+            textColor: AppColors.red);
       }
     }
   }

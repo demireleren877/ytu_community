@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/core/app_constants/path_constants.dart';
 import 'package:math_eng_community/core/services/firebase_services.dart';
 import 'package:math_eng_community/core/utilities/app_drawer.dart';
@@ -39,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                   }
                   return CircleAvatar(
                     radius: 50.r,
-                    backgroundColor: Colors.transparent,
+                    backgroundColor: AppColors.transparent,
                     backgroundImage: output["profileImageUrl"] == null
                         ? const AssetImage(PathConstants.profileImagePathDark)
                         : NetworkImage(output["profileImageUrl"])

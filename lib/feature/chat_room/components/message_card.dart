@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kartal/kartal.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/feature/chat_room/components/show_image.dart';
 
 import 'message_text.dart';
@@ -33,13 +34,13 @@ class MessageCard extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: isMe == true
-                        ? Colors.orangeAccent.withOpacity(0.5)
-                        : Colors.grey.withOpacity(0.5),
+                        ? AppColors.chatOrange
+                        : AppColors.chatGrey,
                     spreadRadius: 2,
                     blurRadius: 5,
                   ),
                 ],
-                color: isMe == true ? Colors.orangeAccent : Colors.white,
+                color: isMe == true ? AppColors.orangeAccent : AppColors.white,
                 borderRadius: BorderRadius.circular(15.r),
               ),
               child: MessageText(

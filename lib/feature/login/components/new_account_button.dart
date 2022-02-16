@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 
 class NewAccountButton extends StatelessWidget {
   const NewAccountButton({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class NewAccountButton extends StatelessWidget {
         child: const Text(
           "Yeni Hesap Oluştur",
           style: TextStyle(
-              fontSize: 15, fontWeight: FontWeight.w600, color: Colors.blue),
+              fontSize: 15, fontWeight: FontWeight.w600, color: AppColors.blue),
         ),
       ),
     );

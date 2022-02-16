@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import '/core/data/class_list.dart';
 import '/feature/choose_lecture/viewmodel/choose_lecture_viewmodel.dart';
 
@@ -23,13 +24,15 @@ class LectureCredit extends StatelessWidget {
           Icons.circle,
           size: 40,
           color: copyLectures[index].isSelected == true
-              ? (chooseLectureVM.totalCredit <= 28 ? Colors.green : Colors.red)
-              : Colors.grey,
+              ? (chooseLectureVM.totalCredit <= 28
+                  ? AppColors.green
+                  : AppColors.red)
+              : AppColors.grey,
         )),
         Positioned(
           child: Text(
             copyLectures[index].credit.toString(),
-            style: const TextStyle(color: Colors.white),
+            style: const TextStyle(color: AppColors.white),
           ),
           bottom: 12,
           left: 15,

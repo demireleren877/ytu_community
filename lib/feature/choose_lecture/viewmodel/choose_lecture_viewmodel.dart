@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/core/data/class_list.dart';
 import 'package:math_eng_community/core/services/firebase_services.dart';
 import 'package:mobx/mobx.dart';
@@ -48,7 +49,7 @@ abstract class _ChooseLectureVMBase with Store {
       Fluttertoast.showToast(
           msg: error.message ?? "Hatalı Giriş Denemesi",
           gravity: ToastGravity.CENTER,
-          textColor: Colors.red);
+          textColor: AppColors.red);
     }
     await FirebaseServices.user.doc(email).set({
       "name": name,

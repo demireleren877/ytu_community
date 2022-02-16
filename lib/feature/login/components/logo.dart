@@ -10,7 +10,7 @@ class Logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      foregroundColor: Colors.white,
+      foregroundColor: AppColors.white,
       backgroundColor: AppColors.transparent,
       radius: 120.r,
       child: Image.asset(ThemeService().isDark()

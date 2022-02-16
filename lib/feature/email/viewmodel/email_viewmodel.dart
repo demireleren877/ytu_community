@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -45,10 +46,10 @@ abstract class _EmailVMBase with Store {
     if (response.body == "OK") {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          backgroundColor: Colors.green,
+          backgroundColor: AppColors.green,
           content: Text(
             "Mail Gönderildi.",
-            style: TextStyle(color: Colors.white, fontSize: 18),
+            style: TextStyle(color: AppColors.white, fontSize: 18),
           ),
         ),
       );

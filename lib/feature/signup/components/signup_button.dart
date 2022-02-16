@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/feature/signup/viewmodel/signup_viewmodel.dart';
 import 'package:kartal/kartal.dart';
 import '../constants.dart';
@@ -51,7 +52,8 @@ class SignupButton extends StatelessWidget {
           },
           child: Text(
             SignupConstants.signupBtnText,
-            style: context.textTheme.headline6?.copyWith(color: Colors.white),
+            style:
+                context.textTheme.headline6?.copyWith(color: AppColors.white),
           ),
         ),
       ),

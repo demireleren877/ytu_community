@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/core/services/firebase_services.dart';
 import 'package:math_eng_community/feature/choose_lecture/constants.dart';
 import 'package:math_eng_community/feature/choose_lecture/viewmodel/choose_lecture_viewmodel.dart';
@@ -8,7 +9,7 @@ import 'package:math_eng_community/feature/choose_lecture/viewmodel/choose_lectu
 AppBar appBar(ChooseLectureVM chooseLectureVM, name, facility, schoolNumber,
     email, password, context, profileImageUrl) {
   return AppBar(
-    iconTheme: const IconThemeData(color: Colors.white),
+    iconTheme: const IconThemeData(color: AppColors.white),
     toolbarHeight: 50.h,
     actions: [
       IconButton(
@@ -27,11 +28,10 @@ AppBar appBar(ChooseLectureVM chooseLectureVM, name, facility, schoolNumber,
         },
         icon: const Icon(
           Icons.done,
-          color: Colors.white,
+          color: AppColors.white,
         ),
       )
     ],
-    backgroundColor: const Color.fromRGBO(269, 155, 195, 100),
     title: const Center(child: Text(ChooseLectureConstants.chooseLectureTitle)),
   );
 }

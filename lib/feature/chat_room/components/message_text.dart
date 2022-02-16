@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 
 class MessageText extends StatelessWidget {
   const MessageText({
@@ -23,14 +24,14 @@ class MessageText extends StatelessWidget {
                 ? snapshot.data.docs[index].data()["senderId"] + "\n"
                 : "",
             style: TextStyle(
-              color: Colors.black,
+              color: AppColors.black,
               fontSize: 16.sp,
             ),
           ),
           TextSpan(
             text: snapshot.data.docs[index].data()["message"],
             style: TextStyle(
-              color: isMe == true ? Colors.white : Colors.black54,
+              color: isMe == true ? AppColors.white : AppColors.black54,
               fontSize: 16.sp,
             ),
           ),

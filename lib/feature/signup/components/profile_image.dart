@@ -36,7 +36,7 @@ class ProfileImage extends StatelessWidget {
                 onPressed: () => showPictureChoices(context),
                 icon: Icon(
                   Icons.add_photo_alternate,
-                  color: Colors.green,
+                  color: AppColors.green,
                   size: 30.sp,
                 ),
               ),

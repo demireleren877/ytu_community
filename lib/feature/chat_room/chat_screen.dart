@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:math_eng_community/core/services/firebase_services.dart';
 import 'package:math_eng_community/core/utilities/centered_progress.dart';
 import 'package:math_eng_community/feature/chat_room/viewmodel/chat_viewmodel.dart';
+import '../../core/app_constants/color_constants.dart';
 import 'components/input_field.dart';
 import 'components/message_card.dart';
 
@@ -32,7 +33,7 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
         ),
         child: Scaffold(
-          backgroundColor: Colors.transparent,
+          backgroundColor: AppColors.transparent,
           appBar: _buildAppBar(context),
           body: _buildBody(),
         ),
@@ -81,7 +82,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
   AppBar _buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: const Color.fromRGBO(269, 155, 195, 100),
       centerTitle: true,
       title: Text(
         widget.currentLecture.toString(),

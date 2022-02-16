@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:math_eng_community/core/app_constants/color_constants.dart';
 import 'package:math_eng_community/core/init/theme_service.dart';
 import 'package:math_eng_community/feature/home/viewmodel/home_viewmodel.dart';
 
@@ -41,8 +42,8 @@ class BottomNavBar extends StatelessWidget {
           ),
         ],
         selectedItemColor:
-            ThemeService().isDark() ? Colors.white : Colors.lightBlue,
-        unselectedItemColor: Colors.grey,
+            ThemeService().isDark() ? AppColors.white : AppColors.lightBlue,
+        unselectedItemColor: AppColors.grey,
         currentIndex: _homeVM.selectedIndex,
       ),
     );
